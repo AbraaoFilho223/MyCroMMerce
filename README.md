@@ -56,11 +56,11 @@ Make sure you have the following installed:
  cd MyCroMMerce
 ```
 
-### **Run Locally using Docker Compose**
+### **Run Locally using Docker Compose [WIP]**
 ```sh
 docker-compose up --build
 ```
-The API Gateway will be available at `http://localhost:8080/api/*`. [Where * should be replaced by a service]
+The API Gateway will be available at `http://localhost:8080/api/*`. *[Where * should be replaced by a service]* **[WIP]**
 
 ### **Manual Startup (Without Docker)**
 If you prefer to run services manually:
