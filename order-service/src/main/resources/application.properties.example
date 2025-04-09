@@ -1,9 +1,10 @@
 # Database connection URL, username, and password
-spring.datasource.url=jdbc:postgresql://localhost:5432/mycrommerce_db
+spring.datasource.url=jdbc:postgresql://localhost:5432/productdb
 spring.datasource.username=your_database_username
 spring.datasource.password=your_database_password
 server.port=8082
 
 # Hibernate settings: update creates or updates the schema automatically
 spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
