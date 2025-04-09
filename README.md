@@ -20,7 +20,7 @@ The system consists of multiple independent microservices that communicate via R
 
 3. **User Service** 👤  
    - Manages user authentication, registration, and profiles.
-   - Implements **JWT-based authentication** for security.
+   - Implements **JWT-based authentication[WIP]** for security.
 
 4. **Payment Gateway Service** 💳  
    - Simulates or integrates with a third-party payment provider.
@@ -47,7 +47,7 @@ Make sure you have the following installed:
 - **Java 17** → `java -version`
 - **Maven** → `mvn -version`
 - **PostgreSQL** (or use Docker for DB setup)
-- **Docker & Docker Compose** → `docker --version`
+- **Docker & Docker Compose** → `docker --version` **[WIP]**
 - **Git** → `git --version`
 
 ### **Clone the Repository**
