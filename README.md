@@ -52,15 +52,15 @@ Make sure you have the following installed:
 
 ### **Clone the Repository**
 ```sh
- git clone https://github.com/AbraaoFilho223/MyCroMMerce-ecommerce-backend-microservices.git
- cd MyCroMMerce-ecommerce-backend-microservices
+ git clone https://github.com/AbraaoFilho223/MyCroMMerce.git
+ cd MyCroMMerce
 ```
 
 ### **Run Locally using Docker Compose**
 ```sh
 docker-compose up --build
 ```
-The API Gateway will be available at `http://localhost:8080/`.
+The API Gateway will be available at `http://localhost:8080/api/*`. [Where * should be replaced by a service]
 
 ### **Manual Startup (Without Docker)**
 If you prefer to run services manually:
@@ -91,4 +91,3 @@ This project is **MIT Licensed** - you are free to use, modify, and distribute i
 =======
 # MyCroMMerce
 Scalable e-commerce backend using Java microservices (Spring Boot, Docker, PostgreSQL)
->>>>>>> 1370a46e787aa4435628927efd019dd595d5396b
