@@ -1,3 +1,5 @@
+version: "3.8"
+
 services:
   postgres:
     image: postgres:13
@@ -11,22 +13,6 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    networks:
-      - app-network
-
-  api-gateway:
-    build:
-      context: ./api-gateway
-      dockerfile: Dockerfile
-    container_name: api-gateway
-    restart: on-failure
-    ports:
-      - "8080:8080"
-    depends_on:
-      - product-service
-      - order-service
-      - user-service
-      - payment-service
     networks:
       - app-network
 
@@ -64,6 +50,23 @@ services:
     networks:
       - app-network
 
+  payment-service:
+    build:
+      context: ./payment-service
+      dockerfile: Dockerfile
+    container_name: payment-service
+    restart: on-failure
+    ports:
+      - "8084:8084"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${DB_NAME}
+      SPRING_DATASOURCE_USERNAME: ${DB_USER}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
+    depends_on:
+      - postgres
+    networks:
+      - app-network
+
   user-service:
     build:
       context: ./user-service
@@ -81,20 +84,23 @@ services:
     networks:
       - app-network
 
-  payment-service:
+  api-gateway:
     build:
-      context: ./payment-service
+      context: ./api-gateway
       dockerfile: Dockerfile
-    container_name: payment-service
+    container_name: api-gateway
     restart: on-failure
     ports:
-      - "8084:8084"
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${DB_NAME}
-      SPRING_DATASOURCE_USERNAME: ${DB_USER}
-      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
+      - "8080:8080"
     depends_on:
-      - postgres
+      product-service:
+        condition: service_started
+      order-service:
+        condition: service_started
+      payment-service:
+        condition: service_started
+      user-service:
+        condition: service_started
     networks:
       - app-network
 
