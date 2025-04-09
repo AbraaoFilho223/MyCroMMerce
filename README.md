@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # E-Commerce Backend (Microservices)
 
 ## 📌 Overview
@@ -88,3 +89,7 @@ This project is **MIT Licensed** - you are free to use, modify, and distribute i
 ---
 
 🎯 **Contributions, issues, and feature requests are welcome!** Feel free to fork and submit a PR. 🚀
+=======
+# MyCroMMerce
+Scalable e-commerce backend using Java microservices (Spring Boot, Docker, PostgreSQL)
+>>>>>>> 1370a46e787aa4435628927efd019dd595d5396b
