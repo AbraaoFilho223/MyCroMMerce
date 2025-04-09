@@ -39,7 +39,7 @@ services:
       - ./product-service/target/product-service-DEF.jar:/app/product-service.jar
     command: ["java", "-jar", "/app/product-service.jar"]
     ports:
-      - "8081:8080"
+      - "8081:8081"
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${DB_NAME}
       SPRING_DATASOURCE_USERNAME: ${DB_USER}
@@ -58,7 +58,7 @@ services:
       - ./order-service/target/order-service-DEF.jar:/app/order-service.jar
     command: ["java", "-jar", "/app/order-service.jar"]
     ports:
-      - "8082:8080"
+      - "8082:8082"
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${DB_NAME}
       SPRING_DATASOURCE_USERNAME: ${DB_USER}
@@ -77,7 +77,7 @@ services:
     - ./user-service/target/user-service-DEF.jar:/app/user-service.jar
     command: ["java", "-jar", "/app/user-service.jar"]
     ports:
-      - "8083:8080"
+      - "8083:8083"
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${DB_NAME}
       SPRING_DATASOURCE_USERNAME: ${DB_USER}
@@ -96,7 +96,7 @@ services:
     - ./payment-service/target/payment-service-DEF.jar:/app/payment-service.jar
     command: ["java", "-jar", "/app/payment-service.jar"]
     ports:
-      - "8084:8080"
+      - "8084:8084"
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${DB_NAME}
       SPRING_DATASOURCE_USERNAME: ${DB_USER}
