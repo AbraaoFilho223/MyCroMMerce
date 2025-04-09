@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.mycrommerce</groupId>
 	<artifactId>order-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>DEF</version>
 	<name>order-service</name>
 	<description>System Managment for orders</description>
 	<url/>

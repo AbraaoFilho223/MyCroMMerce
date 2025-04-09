@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.mycrommerce</groupId>
 	<artifactId>payment-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>DEF</version>
 	<name>payment-service</name>
 	<description>System Managment for payment</description>
 	<url/>

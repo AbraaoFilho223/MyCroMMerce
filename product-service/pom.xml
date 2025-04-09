@@ -10,9 +10,9 @@
 	</parent>
 	<groupId>com.mycrommerce</groupId>
 	<artifactId>product-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>DEF</version>
 	<name>product-service</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Product Microservice</description>
 	<url/>
 	<licenses>
 		<license/>

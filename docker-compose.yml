@@ -1,0 +1,114 @@
+services:
+  postgres:
+    image: postgres:13
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app-network
+      
+  api-gateway:
+    image: ${JAVA_IMAGE}
+    container_name: api-gateway
+    restart: on-failure
+    volumes:
+      - ./api-gateway/target/api-gateway-DEF.jar:/app/api-gateway.jar
+    command: ["java", "-jar", "/app/api-gateway.jar"]
+    ports:
+      - "8080:8080"
+    depends_on:
+      - product-service
+      - user-service
+      - order-service
+      - payment-service
+    networks:
+      - app-network
+
+  product-service:
+    image: ${JAVA_IMAGE}
+    container_name: product-service
+    restart: on-failure
+    volumes:
+      - ./product-service/target/product-service-DEF.jar:/app/product-service.jar
+    command: ["java", "-jar", "/app/product-service.jar"]
+    ports:
+      - "8081:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${DB_NAME}
+      SPRING_DATASOURCE_USERNAME: ${DB_USER}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
+    depends_on:
+      - postgres
+    networks:
+      - app-network
+
+
+  order-service:
+    image: ${JAVA_IMAGE}
+    container_name: order-service
+    restart: on-failure
+    volumes:
+      - ./order-service/target/order-service-DEF.jar:/app/order-service.jar
+    command: ["java", "-jar", "/app/order-service.jar"]
+    ports:
+      - "8082:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${DB_NAME}
+      SPRING_DATASOURCE_USERNAME: ${DB_USER}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
+    depends_on:
+      - postgres
+    networks:
+      - app-network
+
+
+  user-service:
+    image: ${JAVA_IMAGE}
+    container_name: user-service
+    restart: on-failure
+    volumes:
+    - ./user-service/target/user-service-DEF.jar:/app/user-service.jar
+    command: ["java", "-jar", "/app/user-service.jar"]
+    ports:
+      - "8083:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${DB_NAME}
+      SPRING_DATASOURCE_USERNAME: ${DB_USER}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
+    depends_on:
+      - postgres
+    networks:
+      - app-network
+
+      
+  payment-service:
+    image: ${JAVA_IMAGE}
+    container_name: payment-service
+    restart: on-failure
+    volumes:
+    - ./payment-service/target/payment-service-DEF.jar:/app/payment-service.jar
+    command: ["java", "-jar", "/app/payment-service.jar"]
+    ports:
+      - "8084:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${DB_NAME}
+      SPRING_DATASOURCE_USERNAME: ${DB_USER}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
+    depends_on:
+      - postgres
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
