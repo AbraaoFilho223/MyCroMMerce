@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # E-Commerce Backend (Microservices)
 
 ## 📌 Overview
