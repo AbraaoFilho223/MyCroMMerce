@@ -60,7 +60,6 @@ Make sure you have the following installed:
 ```sh
 docker-compose up --build
 ```
-The API Gateway will be available at `http://localhost:8080/api/*`. *[Where * should be replaced by a service]* **[WIP]**
 
 ### **Manual Startup (Without Docker)**
 If you prefer to run services manually:
