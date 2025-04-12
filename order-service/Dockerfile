@@ -4,6 +4,6 @@ COPY . .
 
 FROM eclipse-temurin:17-jdk-alpine
 WORKDIR /app
-COPY --from=build /app/target/order-service-*.jar order-service.jar
-EXPOSE 8084
-CMD ["java", "-jar", "order-service.jar"]
+COPY --from=build /app/target/*.jar app.jar
+EXPOSE 8082
+CMD ["java", "-jar", "app.jar"]
