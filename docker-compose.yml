@@ -10,11 +10,6 @@ services:
       - order-service
       - payment-service
 
-  user-service:
-    build: ./user-service
-    ports:
-      - "8083:8080"
-
   product-service:
     build: ./product-service
     ports:
@@ -24,6 +19,11 @@ services:
     build: ./order-service
     ports:
       - "8082:8080"
+
+  user-service:
+    build: ./user-service
+    ports:
+      - "8083:8080"
 
   payment-service:
     build: ./payment-service
