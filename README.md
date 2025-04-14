@@ -77,7 +77,7 @@ Each service is self-contained. Once cloned, you can run the microservices indiv
 
 3. **Build the Docker containers:**
     ```bash
-    docker-compose up --build
+    docker compose up --build
     ```
 
     This will build and start all the microservices in the project, including the internal H2 database, and the system will be accessible locally.
