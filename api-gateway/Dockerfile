@@ -5,6 +5,6 @@ RUN mvn clean package -DskipTests -pl api-gateway -am
 
 FROM eclipse-temurin:17-jdk-alpine
 WORKDIR /app
-COPY --from=build /build/api-gateway/target/*.jar app.jar
+COPY --from=build /build/api-gateway/target/api-gateway-1.0.0.jar app.jar
 EXPOSE 8080
 CMD ["java", "-jar", "app.jar"]
