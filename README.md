@@ -48,8 +48,14 @@ To run this project locally, you only need:
 
 - **Java 17** → Check with: `java -version`
 - **Maven 3.9+** → Check with: `mvn -version`
+- **Operating System:** **Linux is required** for full compatibility and Docker integration  
+  - ⚠️ **Windows is not fully supported.** You can run services individually on Windows using:
+    ```bash
+    mvn spring-boot:run
+    ```
+    But full Docker Compose integration is designed for Linux environments.
 
-> 📝 You **do not need Docker or PostgreSQL** – everything runs with in-memory databases.
+> 📝 You **do not need PostgreSQL** – everything runs with an internal H2 database. Docker integration is included, but it is designed for Linux.
 
 ---
 
