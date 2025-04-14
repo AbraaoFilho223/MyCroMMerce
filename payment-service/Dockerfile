@@ -2,7 +2,7 @@ FROM maven:3.9.6-eclipse-temurin-17 AS build
 WORKDIR /build
 COPY . .
 # RUN mvn clean package -DskipTests -pl payment-service -am
-RUN mnv package
+RUN mvn package
 
 FROM eclipse-temurin:17-jdk-alpine
 WORKDIR /app
