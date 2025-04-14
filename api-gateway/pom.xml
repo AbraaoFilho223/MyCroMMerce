@@ -12,6 +12,8 @@
   </parent>
 
   <artifactId>api-gateway</artifactId>
+  <packaging>jar</packaging>
+
 
   <properties>
     <spring.main.web-application-type>reactive</spring.main.web-application-type>

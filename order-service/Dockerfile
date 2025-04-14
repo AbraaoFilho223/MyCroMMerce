@@ -5,6 +5,6 @@ RUN mvn clean package -DskipTests -pl order-service -am
 
 FROM eclipse-temurin:17-jdk-alpine
 WORKDIR /app
-COPY --from=build /build/order-service/target/order-service-1.0.0.jar app.jar
+COPY --from=build /build/order-service/target/*.jar app.jar
 EXPOSE 8080
 CMD ["java", "-jar", "app.jar"]
