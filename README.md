@@ -103,6 +103,7 @@ Each service exposes Swagger documentation:
 ```
 MyCroMMerce/
 ├── api-gateway
+├── mycro-frontend (simple frontend)
 ├── order-service
 ├── payment-service
 ├── product-service
