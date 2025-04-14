@@ -86,6 +86,19 @@ Each service is self-contained. Once cloned, you can run the microservices indiv
 
 ---
 
+## ⏳ Build Time
+
+Building the project might take some time, especially the first time you run it, due to the following reasons:
+
+- **First build**: If you're running the project for the first time or after running `mvn clean`, Maven will rebuild all the dependencies and packages.
+- **Number of modules**: The project contains multiple modules, so Maven may need to resolve and build them all, even if you're only building one module like `api-gateway`.
+- **Docker integration**: Running the build inside Docker might increase build time due to the container environment and resource constraints.
+- **Machine resources**: The build time can also vary depending on the available resources (CPU, memory) on your machine.
+
+If the build seems to take too long, you may want to consider optimizing your Docker setup or using multi-core processors to speed up the build process.
+
+---
+
 ## 📚 API Documentation (Swagger)
 
 Each service exposes Swagger documentation:
