@@ -24,6 +24,9 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <mainClass>com.mycrommerce.user_service.UserServiceApplication</mainClass>
+        </configuration>
       </plugin>
     </plugins>
   </build>

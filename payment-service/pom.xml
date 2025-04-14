@@ -24,6 +24,9 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <mainClass>com.mycrommerce.payment_service.PaymentServiceApplication</mainClass>
+        </configuration>
       </plugin>
     </plugins>
   </build>
