@@ -61,9 +61,28 @@ To run this project locally, you only need:
 
 ## ▶️ Running Locally
 
-Each service is self-contained. Once cloned, you can run the microservices individually from your terminal or IDE.
+Each service is self-contained. Once cloned, you can run the microservices individually or through Docker on a Linux system.
 
-> ⚠️ Working on a professional launcher to automate all service startups!
+### Steps to run the project with Docker:
+
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/AbraaoFilho223/MyCroMMerce.git
+    ```
+
+2. **Navigate to the project directory:**
+    ```bash
+    cd MyCroMMerce
+    ```
+
+3. **Build the Docker containers:**
+    ```bash
+    docker-compose up --build
+    ```
+
+    This will build and start all the microservices in the project, including the internal H2 database, and the system will be accessible locally.
+
+> ⚠️ **Note:** Docker integration is designed for Linux. You can use individual services on Windows, but the full Docker Compose setup is optimized for Linux environments.
 
 ---
 
