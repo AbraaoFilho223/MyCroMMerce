@@ -61,7 +61,7 @@ To run this project locally, you only need:
 
 ## ▶️ Running Locally
 
-Each service is self-contained. Once cloned, you can run the microservices individually or through Docker on a Linux system.
+Each service is self-contained. Once cloned, you can run the microservices individually or through Docker on a Linux system. **[Run with Sudo]**
 
 ### Steps to run the project with Docker:
 
