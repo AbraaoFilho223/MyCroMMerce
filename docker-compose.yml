@@ -5,6 +5,7 @@ services:
       dockerfile: api-gateway/Dockerfile
     ports:
       - "8080:8080"
+    network_mode: "host"
     depends_on:
       - user-service
       - product-service
@@ -17,6 +18,7 @@ services:
       dockerfile: product-service/Dockerfile
     ports:
       - "8081:8080"
+    network_mode: "host"
 
   order-service:
     build:
@@ -24,6 +26,7 @@ services:
       dockerfile: order-service/Dockerfile
     ports:
       - "8082:8080"
+    network_mode: "host"
 
   user-service:
     build:
@@ -31,6 +34,7 @@ services:
       dockerfile: user-service/Dockerfile
     ports:
       - "8083:8080"
+    network_mode: "host"
 
   payment-service:
     build:
@@ -38,3 +42,4 @@ services:
       dockerfile: payment-service/Dockerfile
     ports:
       - "8084:8080"
+    network_mode: "host"
