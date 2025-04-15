@@ -38,7 +38,7 @@
           </execution>
         </executions>
         <configuration>
-          <mainClass>com.mycrommerce.apigateway.ApiGatewayApplication</mainClass>
+          <mainClass>com.mycrommerce.api_gateway.ApiGatewayApplication</mainClass>
         </configuration>
       </plugin>
     </plugins>
