@@ -19,7 +19,7 @@
   </modules>
 
   <properties>
-    <java.version>1.8</java.version>  <!-- Pode ser ajustado para qualquer versão -->
+    <java.version>1.8</java.version>
     <spring.boot.version>3.2.5</spring.boot.version>
     <spring.cloud.version>2023.0.0</spring.cloud.version>
   </properties>
