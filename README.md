@@ -98,15 +98,36 @@ If the build seems to take too long, you may want to consider optimizing your Do
 
 ---
 
-## 📚 API Documentation (Swagger)
+## 🔎 How to Test the Project
 
-Each service exposes Swagger documentation:
+After running `docker compose up`, you can test each microservice individually using your browser or a REST client (like Postman or Insomnia). Swagger UI has been temporarily disabled for simplicity.
 
-- **Product Service:** http://localhost:8081/swagger-ui.html
-- **Order Service:** http://localhost:8082/swagger-ui.html
-- **User Service:** http://localhost:8083/swagger-ui.html
-- **Payment Service:** http://localhost:8084/swagger-ui.html
-- **API Gateway:** http://localhost:8080/swagger-ui.html
+### 🧪 Test Endpoints Directly (No Auth Required)
+
+You can access each service directly through its own port and path:
+
+| Microservice       | Port   | Endpoint Example                         |
+|--------------------|--------|------------------------------------------|
+| Product Service    | 8081   | `http://localhost:8081/api/product/...`  |
+| Order Service      | 8082   | `http://localhost:8082/api/order/...`    |
+| User Service       | 8083   | `http://localhost:8083/api/user/...`     |
+| Payment Service    | 8084   | `http://localhost:8084/api/payment/...`  |
+
+> ✅ These routes are public and do **not require authentication**.
+
+### 🌐 Test via API Gateway (Auth Required)
+
+You can also access all services through the API Gateway:
+
+- URL format: `http://localhost:8080/api/{service}/...`  
+  (e.g., `http://localhost:8080/api/product/list`)
+
+To use the API Gateway, authentication is **required**. Use the credentials below to log in:
+
+- **Username:** `admin`  
+- **Password:** `password`
+
+> 🔒 All routes through the API Gateway are protected by Basic Authentication.
 
 ---
 
