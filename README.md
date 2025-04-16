@@ -108,10 +108,10 @@ You can access each service directly through its own port and path:
 
 | Microservice       | Port   | Endpoint Example                         |
 |--------------------|--------|------------------------------------------|
-| Product Service    | 8081   | `http://localhost:8081/api/product/...`  |
-| Order Service      | 8082   | `http://localhost:8082/api/order/...`    |
-| User Service       | 8083   | `http://localhost:8083/api/user/...`     |
-| Payment Service    | 8084   | `http://localhost:8084/api/payment/...`  |
+| Product Service    | 8081   | `http://localhost:8081/api/products/...`  |
+| Order Service      | 8082   | `http://localhost:8082/api/orders/...`    |
+| User Service       | 8083   | `http://localhost:8083/api/users/...`     |
+| Payment Service    | 8084   | `http://localhost:8084/api/payments/...`  |
 
 > ✅ These routes are public and do **not require authentication**.
 
@@ -120,7 +120,7 @@ You can access each service directly through its own port and path:
 You can also access all services through the API Gateway:
 
 - URL format: `http://localhost:8080/api/{service}/...`  
-  (e.g., `http://localhost:8080/api/product/list`)
+  (e.g., `http://localhost:8080/api/products`)
 
 To use the API Gateway, authentication is **required**. Use the credentials below to log in:
 
