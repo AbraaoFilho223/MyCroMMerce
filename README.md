@@ -17,8 +17,7 @@ Each microservice is isolated by domain and communicates via REST APIs through a
 - Integrates with Product and Payment services.
 
 ### 3. User Service 👤
-- Handles user registration and profile management.
-- (JWT Authentication to be added soon).
+- Handles user registration and profile management. **[WIP]**
 
 ### 4. Payment Service 💳
 - Simulates payment processing logic.
